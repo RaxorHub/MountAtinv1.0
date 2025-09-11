@@ -1,0 +1,197 @@
+--[[ Script Obfuscated by ChatGPT ]]--
+
+local v0 = game["GetService"](game, "\84\119\101\101\110\83\101\114\118\105\99\101")
+local v1 = game["GetService"](game, "\80\108\97\121\101\114\115")
+local v2 = game["GetService"](game, "\84\101\108\101\112\111\114\116\83\101\114\118\105\99\101")
+local v3 = game["GetService"](game, "\82\101\112\108\105\99\97\116\101\100\83\116\111\114\97\103\101")
+
+local v4 = v1["LocalPlayer"]
+
+-- Intro Animation
+do
+    local v5 = Instance["new"]("\83\99\114\101\101\110\71\117\105")
+    v5["Name"] = "\73\110\116\114\111\65\110\105\109"
+    v5["ResetOnSpawn"] = false
+    v5["Parent"] = v4:WaitForChild("\80\108\97\121\101\114\71\117\105")
+
+    local v6 = Instance["new"]("\84\101\120\116\76\97\98\101\108")
+    v6["Size"] = UDim2["new"](0, 300, 0, 50)
+    v6["Position"] = UDim2["new"](0.5, -150, 0.4, 0)
+    v6["BackgroundTransparency"] = 1
+    v6["Text"] = "\66\121\32\58\32\82\97\120\111\114\115\99\114\105\112\116\115"
+    v6["TextColor3"] = Color3["fromRGB"](0, 255, 0)
+    v6["TextScaled"] = true
+    v6["Font"] = Enum["Font"]["FredokaOne"]
+    v6["Parent"] = v5
+
+    local v7 = TweenInfo["new"](1.5, Enum["EasingStyle"]["Sine"], Enum["EasingDirection"]["InOut"], -1, true)
+    local v8 = v0["Create"](v0, v6, v7, {["Position"] = UDim2["new"](0.5, -150, 0.42, 0)})
+
+    local v9 = TweenInfo["new"](1.5, Enum["EasingStyle"]["Sine"], Enum["EasingDirection"]["InOut"], -1, true)
+    local v10 = v0["Create"](v0, v6, v9, {["TextSize"] = 50})
+
+    local v11 = TweenInfo["new"](2, Enum["EasingStyle"]["Sine"], Enum["EasingDirection"]["InOut"], -1, true)
+    local v12 = v0["Create"](v0, v6, v11, {["TextColor3"] = Color3["fromRGB"](0, 180, 0)})
+
+    v8["Play"](v8)
+    v10["Play"](v10)
+    v12["Play"](v12)
+
+    wait(5)
+
+    local v13 = v0["Create"](v0, v6, TweenInfo["new"](0.5), {["TextTransparency"] = 1})
+    v13["Play"](v13)
+    v13["Completed"]:Connect(function()
+        v5["Destroy"](v5)
+    end)
+end
+
+-- Status Toggle
+local v14 = v3:FindFirstChild("\65\117\116\111\70\97\114\109\83\116\97\116\117\115")
+if not v14 then
+    v14 = Instance["new"]("\66\111\111\108\86\97\108\117\101")
+    v14["Name"] = "\65\117\116\111\70\97\114\109\83\116\97\116\117\115"
+    v14["Value"] = false
+    v14["Parent"] = v3
+end
+
+-- GUI Main
+local v15 = Instance["new"]("\83\99\114\101\101\110\71\117\105")
+v15["Name"] = "\65\117\116\111\70\97\114\109\71\85\73"
+v15["ResetOnSpawn"] = false
+v15["Parent"] = v4:WaitForChild("\80\108\97\121\101\114\71\117\105")
+
+local v16 = Instance["new"]("\70\114\97\109\101")
+v16["Size"] = UDim2["new"](0, 200, 0, 120)
+v16["Position"] = UDim2["new"](0.5, -100, 0.5, -60)
+v16["BackgroundColor3"] = Color3["new"](0, 0, 0)
+v16["BorderSizePixel"] = 0
+v16["Active"] = true
+v16["Draggable"] = true
+v16["Parent"] = v15
+v16["Visible"] = true
+v16["ClipsDescendants"] = true
+
+local v17 = Instance["new"]("\85\73\67\111\114\110\101\114")
+v17["CornerRadius"] = UDim["new"](0, 15)
+v17["Parent"] = v16
+
+local v18 = Instance["new"]("\84\101\120\116\76\97\98\101\108")
+v18["Size"] = UDim2["new"](1, 0, 0, 20)
+v18["Position"] = UDim2["new"](0, 0, -0.25, 0)
+v18["BackgroundColor3"] = Color3["new"](0.2, 0.2, 0.2)
+v18["Text"] = "\65\85\84\79\32\70\65\82\77\32\58\32\79\78"
+v18["TextColor3"] = Color3["new"](1, 1, 1)
+v18["TextScaled"] = true
+v18["Font"] = Enum["Font"]["SourceSansBold"]
+v18["Parent"] = v16
+
+local v19 = Instance["new"]("\85\73\67\111\114\110\101\114")
+v19["CornerRadius"] = UDim["new"](0, 10)
+v19["Parent"] = v18
+
+local v20 = Instance["new"]("\85\73\84\101\120\116\83\105\122\101\67\111\110\115\116\114\97\105\110\116")
+v20["MinTextSize"] = 8
+v20["MaxTextSize"] = 14
+v20["Parent"] = v18
+
+local v21 = Instance["new"]("\84\101\120\116\66\117\116\116\111\110")
+v21["Size"] = UDim2["new"](0, 160, 0, 40)
+v21["Position"] = UDim2["new"](0.5, -80, 0.5, 0)
+v21["BackgroundColor3"] = Color3["new"](0, 1, 0)
+v21["Text"] = "\65\85\84\79\32\70\65\82\77\32\83\85\77\77\73\84"
+v21["TextColor3"] = Color3["new"](1, 1, 1)
+v21["Font"] = Enum["Font"]["SourceSansBold"]
+v21["TextSize"] = 14
+v21["Parent"] = v16
+
+local v22 = Instance["new"]("\85\73\67\111\114\110\101\114")
+v22["CornerRadius"] = UDim["new"](0, 10)
+v22["Parent"] = v21
+
+-- posisi teleport
+local v23 = Vector3["new"](625.27, 1799.83, 3432.84)
+local v24 = Vector3["new"](780.47, 2183.38, 3945.07)
+
+local v25 = false
+
+local function v26(v27)
+    local v28 = v4["Character"]
+    if v28 and v28:FindFirstChild("\72\117\109\97\110\111\105\100\82\111\111\116\80\97\114\116") then
+        v28["HumanoidRootPart"]["CFrame"] = CFrame["new"](v27)
+    end
+end
+
+local function v29()
+    while v25 do
+        v26(v23)
+        wait(3)
+        v26(v24)
+        wait(3)
+        wait(2)
+        v2["Teleport"](v2, game["PlaceId"], v4)
+        break
+    end
+end
+
+local function v30(v31)
+    v25 = v31
+    v14["Value"] = v31
+    if v25 then
+        v21["Text"] = "\65\85\84\79\32\70\65\82\77\58\32\79\78"
+        v21["BackgroundColor3"] = Color3["new"](0, 1, 0)
+        spawn(v29)
+    else
+        v21["Text"] = "\65\85\84\79\32\70\65\82\77\32\58\32\79\78"
+        v21["BackgroundColor3"] = Color3["new"](0, 1, 0)
+    end
+end
+
+v21["MouseButton1Click"]:Connect(function()
+    v30(not v25)
+end)
+
+-- Rejoin Notification
+local function v32()
+    local v33 = Instance["new"]("\83\99\114\101\101\110\71\117\105")
+    v33["Name"] = "\82\101\106\111\105\110\78\111\116\105\102"
+    v33["Parent"] = v4:WaitForChild("\80\108\97\121\101\114\71\117\105")
+
+    local v34 = Instance["new"]("\70\114\97\109\101")
+    v34["Size"] = UDim2["new"](0, 220, 0, 50)
+    v34["Position"] = UDim2["new"](0.5, -110, 0.1, 0)
+    v34["BackgroundColor3"] = Color3["new"](0, 0, 0)
+    v34["BackgroundTransparency"] = 0.25
+    v34["BorderSizePixel"] = 0
+    v34["Parent"] = v33
+
+    local v35 = Instance["new"]("\84\101\120\116\76\97\98\101\108")
+    v35["Size"] = UDim2["new"](1, 0, 1, 0)
+    v35["BackgroundTransparency"] = 1
+    v35["Text"] = "\82\101\106\111\105\110\101\100\33\46\46\46"
+    v35["TextColor3"] = Color3["new"](0, 1, 0)
+    v35["TextScaled"] = true
+    v35["Font"] = Enum["Font"]["SourceSansBold"]
+    v35["Parent"] = v34
+
+    wait(2)
+    local v36 = TweenInfo["new"](1, Enum["EasingStyle"]["Quad"], Enum["EasingDirection"]["Out"])
+    local v37 = v0["Create"](v0, v34, v36, {["BackgroundTransparency"] = 1, ["TextTransparency"] = 1})
+    v37["Play"](v37)
+    v37["Completed"]:Connect(function()
+        v33["Destroy"](v33)
+    end)
+end
+
+v4["CharacterAdded"]:Connect(function()
+    wait(2)
+    if v14["Value"] then
+        v30(true)
+        v32()
+    end
+end)
+
+if v4["Character"] and v14["Value"] then
+    v30(true)
+    v32()
+end
