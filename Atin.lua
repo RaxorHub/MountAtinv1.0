@@ -1,4 +1,4 @@
---[[ Script Obfuscated by ChatGPT ]]--
+--[[ Script by : Raxorscripts ]]--
 
 local v0 = game["GetService"](game, "\84\119\101\101\110\83\101\114\118\105\99\101")
 local v1 = game["GetService"](game, "\80\108\97\121\101\114\115")
