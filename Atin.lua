@@ -46,7 +46,7 @@ local linkLabel = Instance.new("TextLabel")
 linkLabel.Size = UDim2.new(1, -20, 0, 30)
 linkLabel.Position = UDim2.new(0, 10, 0, 50)
 linkLabel.BackgroundTransparency = 1
-linkLabel.Text = "https://whatsapp.com/channel/0029VaknKj7Id7nFcUaOlZ2S"
+linkLabel.Text = "https://whatsapp.com/channel/0029VaknKj7Id7nFcUaOlZ2S
 JOIN SALURAN KALAU MAU SCRIPT NYA"
 linkLabel.Font = Enum.Font.Gotham
 linkLabel.TextSize = 14
