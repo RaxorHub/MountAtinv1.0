@@ -1,3 +1,53 @@
+-- // GUI Mount Atin [UPDATE] V2
+-- Ambil aja cuy 🗿
+
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local CoreGui = game:GetService("CoreGui")
+
+-- Hapus GUI lama kalau ada
+if CoreGui:FindFirstChild("MountAtinV2") then
+    CoreGui:FindFirstChild("MountAtinV2"):Destroy()
+end
+
+-- ScreenGui
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "MountAtinV2"
+screenGui.Parent = CoreGui
+
+-- Frame utama
+local mainFrame = Instance.new("Frame")
+mainFrame.Size = UDim2.new(0, 320, 0, 200)
+mainFrame.Position = UDim2.new(0.5, -160, 0.5, -100)
+mainFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25) -- tema dark
+mainFrame.BorderSizePixel = 2
+mainFrame.BorderColor3 = Color3.fromRGB(255, 255, 255) -- tepi putih
+mainFrame.Active = true
+mainFrame.Draggable = true
+mainFrame.Parent = screenGui
+
+-- Buat bulat sudut
+local corner = Instance.new("UICorner")
+corner.CornerRadius = UDim.new(0, 15)
+corner.Parent = mainFrame
+
+-- Judul
+local title = Instance.new("TextLabel")
+title.Size = UDim2.new(1, 0, 0, 40)
+title.BackgroundTransparency = 1
+title.Text = "Mount Atin [UPDATE] V2"
+title.Font = Enum.Font.GothamBold
+title.TextSize = 20
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.Parent = mainFrame
+
+-- Link WhatsApp
+local linkLabel = Instance.new("TextLabel")
+linkLabel.Size = UDim2.new(1, -20, 0, 30)
+linkLabel.Position = UDim2.new(0, 10, 0, 50)
+linkLabel.BackgroundTransparency = 1
+linkLabel.Text = "https://whatsapp.com/channel/0029VaknKj7Id7nFcUaOlZ2S"
+JOIN SALURAN KALAU MAU SCRIPT NYA"
 linkLabel.Font = Enum.Font.Gotham
 linkLabel.TextSize = 14
 linkLabel.TextWrapped = true
