@@ -43,11 +43,10 @@ title.Parent = mainFrame
 
 -- Link WhatsApp
 local linkLabel = Instance.new("TextLabel")
-linkLabel.Size = UDim2.new(1, -20, 0, 30)
+linkLabel.Size = UDim2.new(1, -20, 0, 50)
 linkLabel.Position = UDim2.new(0, 10, 0, 50)
 linkLabel.BackgroundTransparency = 1
-linkLabel.Text = "https://whatsapp.com/channel/0029VaknKj7Id7nFcUaOlZ2S
-JOIN SALURAN KALAU MAU SCRIPT NYA"
+linkLabel.Text = "https://whatsapp.com/channel/0029VaknKj7Id7nFcUaOlZ2S\nJOIN SALURAN KALAU MAU SCRIPT NYA"
 linkLabel.Font = Enum.Font.Gotham
 linkLabel.TextSize = 14
 linkLabel.TextWrapped = true
@@ -84,9 +83,9 @@ tiktokCorner.Parent = tiktokBtn
 
 -- Fungsi copy ke clipboard
 local function setClipboard(text)
-    if setclipboard then
+    if typeof(setclipboard) == "function" then
         setclipboard(text)
-    elseif toclipboard then
+    elseif typeof(toclipboard) == "function" then
         toclipboard(text)
     else
         warn("Clipboard function not supported")
