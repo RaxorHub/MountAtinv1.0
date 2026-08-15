@@ -1893,7 +1893,7 @@ Items["SubTitle"] = Library:Create("TextLabel", {
                 Items["Search"] = Library:Create("Frame", {
                     Name = "\0",
                     Parent = Items["Content"].Instance,
-                    Position = UDim2.new(0, 50, 0, 10),
+                    Position = UDim2.new(0, 50, 0, 80),
                     Size = UDim2.new(1, -100, 0, 36),
                     BorderSizePixel = 0,
                     BackgroundColor3 = Color3.fromRGB(22, 30, 35)
@@ -1934,7 +1934,37 @@ Items["SubTitle"] = Library:Create("TextLabel", {
                     CornerRadius = UDim.new(0, 4)
                 })
                 
+                Items["ContentDescription"] = Library:Create("TextLabel", {
+                    Name = "\0",
+                    FontFace = Library.Font,
+                    TextSize = Library.FontSize,
+                    Parent = Items["Content"].Instance,
+                    TextColor3 = Color3.fromRGB(109, 109, 109),
+                    Text = "",
+                    AnchorPoint = Vector2.new(0.5, 0),
+                    Size = UDim2.new(0, 0, 0, 0),
+                    BackgroundTransparency = 1,
+                    Position = UDim2.new(0.5, 0, 0, 0),
+                    BorderSizePixel = 0,
+                    Visible = false,
+                    AutomaticSize = Enum.AutomaticSize.X
+                })
                 
+                Items["ContentTitle"] = Library:Create("TextLabel", {
+                    Name = "\0",
+                    FontFace = Library.Font,
+                    TextSize = Library.FontSize,
+                    Parent = Items["Content"].Instance,
+                    TextColor3 = Color3.fromRGB(239, 239, 254),
+                    Text = "",
+                    AnchorPoint = Vector2.new(0.5, 0),
+                    Size = UDim2.new(0, 0, 0, 0),
+                    BackgroundTransparency = 1,
+                    Position = UDim2.new(0.5, 0, 0, 0),
+                    BorderSizePixel = 0,
+                    Visible = false,
+                    AutomaticSize = Enum.AutomaticSize.X
+                })                
 
                 if IsMobile then
                     Items["OpenAndClose"] = Library:Create("TextButton", {
@@ -2127,6 +2157,13 @@ Items["SubTitle"] = Library:Create("TextLabel", {
                     BorderSizePixel = 0,
                     AutomaticSize = Enum.AutomaticSize.Y
                 })
+                
+                Library:Create("UIListLayout", {
+                    Name = "\0",
+                    Parent = Items["SubPages"].Instance,
+                    Padding = UDim.new(0, 10),
+                    SortOrder = Enum.SortOrder.LayoutOrder
+                })
 
                 Items["Page"] = Library:Create("Frame", {
                     Name = "\0",
@@ -2138,7 +2175,12 @@ Items["SubTitle"] = Library:Create("TextLabel", {
                     BorderSizePixel = 0
                 })
 
-                
+                Library:Create("UIPadding", {
+                    Name = "\0",
+                    Parent = Items["SubPages"].Instance,
+                    PaddingRight = UDim.new(0, 15),
+                    PaddingLeft = UDim.new(0, 15)
+                })                
 
                 Page.Items = Items
             end
@@ -2362,8 +2404,12 @@ Items["SubTitle"] = Library:Create("TextLabel", {
 
                     Library.CurrentPage = Page
 
-                    Page.Window.Items.ContentTitle.Instance.Text = Page.Name
-                    Page.Window.Items.ContentDescription.Instance.Text = Page.Description
+                    if Page.Window.Items.ContentTitle then
+                        Page.Window.Items.ContentTitle.Instance.Text = Page.Name
+                    end
+                    if Page.Window.Items.ContentDescription then
+                        Page.Window.Items.ContentDescription.Instance.Text = Page.Description
+                    end
                 else
                     Items["Inactive"]:Tween({BackgroundTransparency = 1})
                     
