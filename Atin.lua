@@ -1893,45 +1893,18 @@ Items["SubTitle"] = Library:Create("TextLabel", {
                 Items["Search"] = Library:Create("Frame", {
                     Name = "\0",
                     Parent = Items["Content"].Instance,
-                    Position = UDim2.new(0, 50, 0, 80),
-                    Size = UDim2.new(1, -100, 0, 36),
+                    Position = UDim2.new(0, 0, 0, 0),
+                    Size = UDim2.new(0, 0, 0, 0),
                     BorderSizePixel = 0,
-                    BackgroundColor3 = Color3.fromRGB(22, 30, 35)
-                })
-                
-                Items["SearchIcon"] = Library:Create("ImageLabel", {
-                    Name = "\0",
-                    Parent = Items["Search"].Instance,
-                    ImageColor3 = Color3.fromRGB(143, 147, 167),
-                    AnchorPoint = Vector2.new(0, 0.5),
-                    Image = "rbxassetid://101277274908578",
                     BackgroundTransparency = 1,
-                    Position = UDim2.new(0, 10, 0.5, 0),
-                    Size = UDim2.new(0, 18, 0, 18),
-                    BorderSizePixel = 0
+                    Visible = false
                 })
                 
                 Items["SearchInput"] = Library:Create("TextBox", {
                     Name = "\0",
-                    FontFace = Library.Font,
-                    TextSize = Library.FontSize,
                     Parent = Items["Search"].Instance,
-                    TextColor3 = Color3.fromRGB(143, 147, 167),
                     Text = "",
-                    Size = UDim2.new(0, 0, 0, 15),
-                    Position = UDim2.new(0, 38, 0.5, 0),
-                    AnchorPoint = Vector2.new(0, 0.5),
-                    BorderSizePixel = 0,
-                    BackgroundTransparency = 1,
-                    PlaceholderColor3 = Color3.fromRGB(143, 147, 167),
-                    AutomaticSize = Enum.AutomaticSize.X,
-                    PlaceholderText = "Search"
-                })
-                
-                Library:Create("UICorner", {
-                    Name = "\0",
-                    Parent = Items["Search"].Instance,
-                    CornerRadius = UDim.new(0, 4)
+                    Visible = false
                 })
                 
                 Items["ContentDescription"] = Library:Create("TextLabel", {
@@ -2170,8 +2143,8 @@ Items["SubTitle"] = Library:Create("TextLabel", {
                     Parent = Library.UnusedHolder.Instance,
                     BackgroundTransparency = 1,
                     Visible = false,
-                    Position = UDim2.new(0, 0, 0, 56),
-                    Size = UDim2.new(1, 0, 1, -56),
+                    Position = UDim2.new(0, 0, 0, 10),
+                    Size = UDim2.new(1, 0, 1, -10),
                     BorderSizePixel = 0
                 })
 
